@@ -1,0 +1,223 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>无敌方方土</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+        <script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header style="background-color:#fff;height: 35px;width: 100%;position: fixed;top: 0;right: 0;left: 0;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);z-index: 100;border-bottom: 0px solid rgb(193, 0, 33);">
+            <h1 style="display: inline-block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-after: 0.67em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;">
+                <a href="ilikun.com" style="font-family: LeagueGothic, Verdana, Arial, sans-serif;color:rgb(255, 255, 255);text-decoration: none;texttransform: uppercase;font-weight: normal;font-size: 28px;position: absolute;top: 8px;left: 35px;
+">无敌方方土</a>
+                <span id="version">v1</span>
+            </h1>
+            <nav style="display: inline-block;">
+                <ul>
+                    <li>
+                        {% block classification %}默认{% endblock classification %}
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="responsive-header visible-xs visible-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="top-section">
+                            <div class="profile-image">
+                                <img src="{% static 'img/profile.jpg' %}" alt="Volton">
+                            </div>
+                            <div class="profile-content">
+                                <h3 class="profile-title">Lee</h3>
+                                <p class="profile-description">Pro CloudComputer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+                <div class="main-navigation responsive-menu">
+                    <ul class="navigation">
+                        <li><a href="#top"><i class="fa fa-home"></i>Home</a></li>
+                        <li><a href="#about"><i class="fa fa-user"></i>About Me</a></li>
+                        <li><a href="#projects"><i class="fa fa-newspaper-o"></i>My Gallery</a></li>
+                        <li><a href="#contact"><i class="fa fa-envelope"></i>Stand by me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar-menu hidden-xs hidden-sm">
+            <div class="top-section">
+                <div class="profile-image">
+                    <img src="{% static 'img/profile.jpg' %}" alt="Volton">
+                </div>
+                <h3 class="profile-title">Lee</h3>
+                <p class="profile-description">Pro CloudComputer</p>
+            </div> <!-- top-section -->
+            <div class="main-navigation">
+                <ul class="navigation">
+                    <li><a href="#top"><i class="fa fa-globe"></i>Home</a></li>
+                    <li><a href="#about"><i class="fa fa-pencil"></i>MyBlog</a></li>
+                    <li><a href="#projects"><i class="fa fa-paperclip"></i>About Me</a></li>
+                    <li><a href="#contact"><i class="fa fa-link"></i>Stand by me</a></li>
+                </ul>
+            </div> <!-- .main-navigation -->
+            <div class="social-icons">
+                <div class="box">
+                    <script language="javascript">
+                        calendar();
+                        startclock();
+                    </script>
+                </div>
+            </div> <!-- .social-icons -->
+        </div> <!-- .sidebar-menu -->
+        
+        <div class="banner-bg" id="top">
+            <div class="banner-overlay"></div>
+            <div class="welcome-text">
+                <h2>Just the beginning</h2>
+                <h5>新浪微博：http://weibo.com/u/3979772392</h5>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="fluid-container">
+               <div class="content-wrapper">
+                
+                    <!-- ABOUT -->
+                    <div class="page-section" id="about">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">{% block title %}默认标题{% endblock title %}</h4>
+                            <p>{% block content %}默{% endblock content %}</p>
+                            <hr>
+                        </div>
+                    </div> <!-- #about -->
+                    </div>
+		    
+		    <div class="page-section" id="projects">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">广告位！我很强！</h4>
+                            <p>广告介绍</p>
+                        </div>
+                    </div>
+                    <div class="row projects-holder">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="{% static 'img/1.jpg' %}" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="{% static 'img/2.jpg' %}" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="{% static 'img/3.jpg' %}" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="{% static 'img/4.jpg' %}" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et nisl tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="{% static 'img/5.jpg' %}" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et nisl tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="project-item">
+                                <img src="{% static 'img/6.jpg' %}" alt="">
+                                <div class="project-hover">
+                                    <div class="inside">
+                                        <h5><a href="#">Pellentesque porta ligula</a></h5>
+                                        <p>Quisque mattis sit amet dolor eu scelerisque. Vivamus bibendum massa et nisl tempus commodo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .projects-holder -->
+                    </div>
+                    <hr>
+		    
+		    <div class="page-section" id="contact">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">扫描二维码支持我</h4>
+                            <p>你们的支持是我更新的动力！--无敌方方土</p>
+			    <img src="{% static 'img/支付宝.jpg' %}" alt="Volton">
+                        </div>
+                    </div>
+                    <div class="row">
+                     
+                    </div> <!-- .contact-form -->
+                    </div>
+                    <div class="row" id="footer">
+                        <div class="col-md-12 text-center">
+                            <p class="copyright-text">Copyright &copy; 2016 wuli无敌方方土 <a href="http://weibo.com/u/3979772392" target="_blank" title="新浪微博">Lee</a> - Collect from <a href="http://weibo.com/u/3979772392" title="来自于" target="_blank">甘肃的Boy</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="{% static 'js/vendor/jquery-1.10.2.min.js' %}"></script>
+        <script src="{% static 'js/min/plugins.min.js' %}"></script>
+        <script src="{% static 'js/min/main.min.js' %}"></script>
+        <script src="{% static 'js/time.js' %}"></script>
+
+    </body>
+</html>

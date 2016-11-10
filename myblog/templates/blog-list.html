@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock title %}
+
+{% block content %}
+
+{% for blog in blogs %}
+    <div class="blog" style="font-family:DengXian, 'Microsoft Yahei', Tahoma, Arial, Helvetica, Simsun, STHeiti;font-size:14px;">
+        <div class="title" style="font-size:2em;padding-top:10px;font-weight:bold;color:rgb(0, 80, 89)">
+            <a href="{% url 'blog_get_detail' blog.id %}"><h2 style="color:rgb(0, 80, 89)">{{ blog.title }}</h2></a>
+        </div>
+        <div class="info" style="padding-top:10px">
+            <span class="author" style="color: rgb(255, 143, 33) !important;font-size:1.2em">{{ blog.author }}</span>
+            <span class="created" style="color: #6aa84f">{{ blog.created|date:"Y-m-d H:i" }}</span>
+        </div>
+        <div class="summary" style="padding-top:30px;line-height:1.4em;">
+            {{ blog.content|truncatewords:100 }}
+        </div>
+    </div>
+	<hr>
+{% endfor %}
+{% endblock content %}

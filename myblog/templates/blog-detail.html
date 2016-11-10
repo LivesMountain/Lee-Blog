@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="content">
+	<h4 style="font-size:2em;padding-top:10px;font-weight:bold;color:rgb(0, 80, 89)">{{blog.title}}</h4>
+	<div style="padding-top:30px;line-height:1.4em">{{blog.content}}</div>
+</div>
+
+<div class="comment" style="padding-top:100px">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="widget-title">留言给我：</h4>
+            {% for comment in comments %}
+			<p>{{ comment.name }} 说: {{ comment.content }}</p>
+			{% endfor %}
+        </div>
+    </div>
+    <div class="row">
+    <form action="{% url 'blog_get_detail' blog.id %}" method="post" class="contact-form">
+		{% csrf_token %}
+        {% for field in form %}
+        <fieldset class="col-md-4 col-sm-6">
+            {{ field.label }}: {{ field }}
+        </fieldset>
+		{% endfor %}
+        <fieldset class="col-md-12 col-sm-12">
+            <input type="submit" class="button big default" value="提交">
+        </fieldset>
+    </form>
+    </div> <!-- .contact-form -->
+</div>
+{% endblock %}
